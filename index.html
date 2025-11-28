@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Competitive Order Management UI</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div>
+      <p class="eyebrow">Demo workspace</p>
+      <h1>Competitive Order Management</h1>
+      <p class="lede">Explore participant and admin flows for competitive task completion with verified winners.</p>
+    </div>
+    <div class="status-pill">Real-time mock data</div>
+  </header>
+
+  <main class="layout">
+    <section class="panel participant" aria-labelledby="participant-title">
+      <div class="panel-header">
+        <div>
+          <p class="eyebrow">Participant</p>
+          <h2 id="participant-title">Task board</h2>
+        </div>
+        <button class="secondary" id="refresh-btn">Sync</button>
+      </div>
+      <div class="columns">
+        <div class="column tasks">
+          <h3>Open tasks</h3>
+          <div id="task-list" class="list"></div>
+        </div>
+        <div class="column details">
+          <div class="detail-card" id="task-detail" aria-live="polite"></div>
+          <div class="card" id="submission-form"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel admin" aria-labelledby="admin-title">
+      <div class="panel-header">
+        <div>
+          <p class="eyebrow">Admin</p>
+          <h2 id="admin-title">Verification & approvals</h2>
+        </div>
+        <div class="queue-meta" id="queue-meta"></div>
+      </div>
+      <div class="columns">
+        <div class="column queue">
+          <h3>Pending review</h3>
+          <div id="review-queue" class="list"></div>
+        </div>
+        <div class="column review">
+          <div class="detail-card" id="review-detail" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel notifications" aria-labelledby="notifications-title">
+      <div class="panel-header">
+        <div>
+          <p class="eyebrow">Activity</p>
+          <h2 id="notifications-title">Notifications & audit</h2>
+        </div>
+        <button class="secondary" id="clear-log">Clear log</button>
+      </div>
+      <div id="notification-feed" class="feed" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
